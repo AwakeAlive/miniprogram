@@ -51,3 +51,17 @@
     })
   },
 ```
+### 原生组件使用注意点
+* 原生组件层级最高，不受`z-index`影响，后插入的原生组件可以覆盖之前的原生组件。（`cover-view`和`cover-image` 可以覆盖部分原生组件上面）
+* 原生组件无法在`picker-view`使用（基础库版本2.4.4以下，同样不支持在`scroll-view`, `swiper`, `movable-view`使用）
+* 原生组件某些css不支持（1. CSS动画 2. 无法设置原生组件`position: fixed;` 3. 父级节点不能使用`overflow: hidden`来裁剪原生组件显示区域）
+* 原生组件事件监听不支持`bind:eventname`，只支持`bindeventname`。同时也不支持`catch`和`capture`的事件绑定方式
+* 原生组件有： 
+  * camera
+  * canvas
+  * input(仅focus表现为原生组件)
+  * live-player
+  * live-pusher
+  * map
+  * textarea
+  * video
